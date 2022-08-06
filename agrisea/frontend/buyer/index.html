@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- css CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+          rel="stylesheet" />
+          <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+          <link href="xxxstyle.css" rel="stylesheet" type="text/css" media="all">
+          <link href="xxxstyle1.css" rel="stylesheet" type="text/css" media="all">
+          <script defer src="http://localhost/branchaudit/login.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="style3.css"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>branch.audit</title>
+</head>
+<body style="background-color:#414a4c">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="height:69px; margin-top: -62px;">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href=""><img class="logo" src="mainimg.jpg" style="margin-left: 15px; height:50px;"></a>
+            </div>
+            <a href="http://localhost/Branch_final/index.html" class="navbar-brand" style="margin-left: 424px;margin-right: -336px;" >HOME</a>
+            
+        <div class="navbar-header">
+            <a href=""><img class="logo" src="04.jpg" style="margin-left: 15px;"></a>
+        </div>
+        
+        </div>
+        
+
+    </nav>
+
+    <div class="wrapper bgded overlay" style="background-color:#99bd85"; height:597px;">
+        <div id="pageintro" class="hoc clear" > 
+          <!-- ################################################################################################ -->
+          <!-- <article>
+            <h3 class="heading">Pellentesque risus nulla</h3>
+            <p>Fringilla sed posuere et dignissim non ipsum cras euismod urna non neque auctor dignissim nulla mattis purus donec sed lorem eget nibh sagittis</p>
+            <footer>
+              <ul class="nospace inline pushright">
+                <li><a class="btn" href="#">Dictum aenean</a></li>
+                <li><a class="btn inverse" href="#">Nunc molestie</a></li>
+              </ul>
+            </footer>
+          </article> -->
+
+          <article>
+            <div class="wrapper row2">
+          <section id="introblocks" class="hoc container clear" style="background-image:url('welcome.png');background-repeat: no-repeat; background-position: right 45% bottom 109%; background-size: 71%; margin-left: -13px;  "> 
+            <!-- <span>WELCOME</span> -->
+            <!-- ################################################################################################ -->
+            <ul class="nospace group">
+              <li class="one_half first">
+                <article style="height:207px;"><a href="#"><i class='fas fa-users' style='font-size:24px'></i>
+                  <br>
+                    <!-- <button >Open Form</button>  -->
+                    <button
+                class="btn btn-primary btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#enroll"
+              style="font-size:14px; background-color: #ce5656;"
+            ><b>
+            Login as Farmer</b>
+            </button>
+                    <!-- <h6 class="heading underline">Login as Audit Executive</h6> -->
+                    
+                    <!-- <div class="open-button" onclick="openForm()">
+                    
+                  <h6 class="heading underline">Login as Audit Executive</h6>
+                  <div class="form-popup" id="myForm">
+                    <form action="/action_page.php" class="form-container">
+                      <h1>Login</h1>
+                  
+                      <label for="email"><b>Email</b></label>
+                      <input type="text" placeholder="Enter Email" name="email" required>
+                  
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                  
+                      <button type="submit" class="btn">Login</button>
+                      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                    </form>
+                </div>
+                </div> -->
+                  <!-- <p></p> -->
+                
+                
+            </a></article>
+              </li>
+              <li class="one_half" >
+                <article class="active"  style="height: 206px;"><a href="#"><i class='fas fa-address-book' style='font-size:24px'></i>
+                  <br>
+                  <button
+                class="btn btn-primary btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#enroll"
+              style="font-size:15px;  background-color: #ce5656;"
+            ><b>
+            Login as Buyer</b>
+            </button>
+            <!-- <h6 class="heading underline">Login as COO</h6> -->
+                  <!-- <p></p> -->
+                </a></article>
+              </li>
+              <!-- <li class="one_third">
+                <article><a href="#"><i class="fas fa-moon"></i></a>
+                  <h6 class="heading underline">Quis euismod malesuada</h6>
+                  <p>Purus morbi ut risus nec orci bibendum commodo phasellus fringilla pede vitae tincidunt congue nibh lobortis.</p>
+                </article>
+              </li> -->
+            </ul>
+            <!-- ################################################################################################ -->
+          </section>
+        </div>
+        </article>
+          <!-- ################################################################################################ -->
+        </div>
+      </div>
+
+
+
+      <br>
+    
+
+
+    <div class="footer bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start" style="margin-top: -19px;">
+        <div class="container-lg">
+            
+            <div class="row text-center">
+                <div class="col-md">
+                    <h3>Get In Touch</h3>
+                    <p></p>
+                   
+                </div>
+                <div class="col-md">
+                    <h3>Follow Us</h3>
+                    <img src="01.png" style="padding:2px;">
+                    <img src="02.png" style="padding:2px;">
+                    <img src="03.png" style="padding:2px;">
+                    <img src="05.png" style="padding:2px;">
+                </div>
+                <div class="col-md">
+                    <h3>Links</h3>
+                    <p>Support <br> Privacy Policy <br> Career<br> Services</p>
+                </div>
+                <div class="col-md">
+                    <h3>Address</h3>
+                    <p>
+                        #3, First Floor, First Main,<br> BDA Layout, HAL 2nd Stage,<br> Kodihalli, Bengaluru,<br> Karnataka 560008 <br> 
+                        <b>Phone Number:</b> +91 7272882820 <br> <b>Email:</b> dbchdbchd.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="enroll"
+      tabindex="-1"
+      aria-labelledby="enrollLabel"
+      aria-hidden="true"
+      style="margin-left: 153px;
+      font-size: 24px;"
+    >
+      <div class="modal-dialog" style="margin-left: 165px; margin-top: 135px;">
+        <div class="modal-content" style="margin-left: 180px;">
+          <div class="modal-header" style="margin-left: 10px;">
+            <h5 class="modal-title" id="enrollLabel" style="margin-left: 160px; font-size: 24px; color:#ce5656"><b>LOGIN FORM</b></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div id="login-error-msg-holder">
+            <!--p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>-->
+          </div>
+
+          <!-- <div class="login-form"> -->
+            <!-- <h1>Login Form</h1> -->
+            <!-- <form action="#"> -->
+              <form id="login-form">
+                <input  type="text" name="username" id="username-field" class="login-form-field" style="margin-top: 25px; margin-left: 110px; width: 275px;" placeholder="Username">
+                <input  type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" style="margin-top: 32px; margin-left: 109px; width: 272px;">
+                <span style="margin-left: 89px; margin-top: 11px;">
+                  <input type="checkbox" name="checkbox" style="margin-left: -20px; margin-top: 13px;">
+                      <label for="checkbox" style="margin-top: -54px; margin-left: 15px;">remember</label>
+                  </span>
+                <button  type="submit" value="submit" id="login-form-submit" style="margin-right: -107px; background-color:#ce5656; color:white;" onClick="linknext()">SUBMIT</button>
+                <!-- <button  type="submit" value="Reset" id="login-form-submit" style="margin-right: -107px; background-color:#ce5656; color:white;" margin-top:>RESET</button> -->
+              </form>
+                <!-- <input type="text" name="username" placeholder="username" id="username-field" class="login-form-field" style="margin-top: 25px; margin-left: 110px; width: 275px;">
+                    <input type="password" name="password" placeholder="password" id="password-field" class="login-form-field" style="margin-top: 32px; margin-left: 109px; width: 272px;">
+                    //<input type="submit" class="btn" value="submit" id="login-form-submit" style="margin-right: 201px; background-color:#ce5656; color:white;"/><b>Submit</b>   
+                    <input style="margin: 5px;" type="submit" value="submit" id="login-form-submit" onClick="linknext()"/>
+                    <input style="margin:5px;" type="submit" value="Reset" id="login-form-submit"> -->
+                    <!-- <span style="margin-left: 166px;">
+                            <input type="checkbox" name="checkbox">
+                                <label for="checkbox">remember</label>
+                            </span> -->
+                            <!-- <input type="submit" value="log in"> -->
+                            <!-- </form> -->
+                        <!-- </div> -->
+          <div class="modal-footer">
+            <!-- <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button> -->
+            <!-- <button href="http://localhost/branchaudit/mainlandingpage.html" type="button" class="btn" value="submit" id="login-form-submit" style="margin-right: 201px; background-color:#ce5656; color:white;"><b>Submit</b></button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+                crossorigin="anonymous">
+        </script>
+    
+        <script>
+            mapboxgl.accessToken =
+                'pk.eyJ1IjoiYnRyYXZlcnN5IiwiYSI6ImNrbmh0dXF1NzBtbnMyb3MzcTBpaG10eXcifQ.h5ZyYCglnMdOLAGGiL1Auw'
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [-71.060982, 42.35725],
+                zoom: 18,
+            })
+        </script>
+
+<script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+    <script>
+      function linknext() {
+        // window.location.href="http://localhost/branchaudit/loginpage.html";
+      }
+
+      const loginForm = document.getElementById("login-form");
+const loginButton = document.getElementById("login-form-submit");
+const loginErrorMsg = document.getElementById("login-error-msg");
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    if (username === "auditexe123" && password === "iamaudit") {
+        // alert("Welcome Audit Executive.You have successfully logged in!!!");
+        // location.reload();
+        window.location.href=("http://localhost/Branch_final/mainlandingpage.html");
+    }
+    else if (username === "coo123" && password === "iamcoo") {
+        // alert("Welcome COO.You have successfully logged in!!!");
+        // location.reload();
+        window.location.href=("http://localhost/Branch_final/mainlandingpage.html");
+    }else {
+        alert("Invalid Credentials");
+        loginErrorMsg.style.opacity = 1;
+    }
+})
+    </script>
+
+    
+    
+    </body>
+    </html>

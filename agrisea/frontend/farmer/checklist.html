@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX API Tutorial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+    <link rel="stylesheet" href="ajaxstyle.css">
+    <!-- <link rel="stylesheet" href="css/style3.css"> -->
+    
+  
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body style="margin-left: -42px;">
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+       
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: center;
+          padding: 8px;
+        }
+       
+        tr:nth-child(even) {
+          /* background-color: #dddddd; */
+          background-color: #99bd85;
+        }
+        
+        </style>
+
+</head>
+<body onload="openeachdip()">
+    
+    <h1 style="align-content: center; color: black;">List of Crops </h1>
+    <snap id="branchname"></snap>
+    <snap id="bm"></snap>
+   
+    <hr>
+    <tr>
+       
+        </tr>
+    <table readonly style="width: 89%; margin-left: 61px;">
+        <thead>
+            
+                <tr style="background-color: grey; color:white;">
+                <th>ID</th>
+                <th>Crop Name</th>
+                <th>Stage</th>
+                <th>Grade</th>
+                 <th>MSP</th>
+                 <th>Bid Price</th>
+            </tr> 
+        </thead>
+        <tr>
+            <td class="id">1</td>
+            <td><input type="text"placeholder="Wheat"></td>
+                    <td><input type="text" value="" placeholder="Half Month Crop Cycle"></td>
+                    <td><input type="text" value="" placeholder="A"></td>
+                    <!-- <th><form action="l">
+            <input type="file" id="myFile" name="filename" style="width: 169px; font-size:0.8em;"></form></th> -->
+            <td><input type="text" class="com" ></td>
+                <td><input type="text" ></td>
+                
+        </tr>
+        <tr>
+            <td class="id">2</td>
+            <td><input type="text"placeholder="Sugarcane"></td>
+                    <td><input type="text" value="" placeholder="Full Month Crop Cycle"></td>
+                    <td><input type="text" value="" placeholder="C"></td>
+                    <!-- <th><form action="l">
+            <input type="file" id="myFile" name="filename" style="width: 169px; font-size:0.8em;"></form></th> -->
+            <td><input type="text" class="com" ></td>
+                <td><input type="text" ></td>
+                
+        </tr>
+        <tr>
+            <td class="id">3</td>
+            <td><input type="text"placeholder="Corn"></td>
+                    <td><input type="text" value="" placeholder="Full Month Crop Cycle"></td>
+                    <td><input type="text" value="" placeholder="A"></td>
+                    <!-- <th><form action="l">
+            <input type="file" id="myFile" name="filename" style="width: 169px; font-size:0.8em;"></form></th> -->
+            <td><input type="text" class="com" ></td>
+                <td><input type="text" ></td>
+                
+        </tr>
+        <tr>
+            <td class="id">4</td>
+            <td><input type="text"placeholder="Tomato"></td>
+                    <td><input type="text" value="" placeholder="Half Month Crop Cycle"></td>
+                    <td><input type="text" value="" placeholder="A"></td>
+                    <!-- <th><form action="l">
+            <input type="file" id="myFile" name="filename" style="width: 169px; font-size:0.8em;"></form></th> -->
+            <td><input type="text" class="com" ></td>
+                <td><input type="text" ></td>
+                
+        </tr>
+        <tbody id="fillindata">
+
+        </tbody>
+
+    </table>
+    <br>
+  
+    <div class="buttons" text-align="center" style="margin-left: 388px; margin-top: 14px; ">
+        <button id="add" class="btn btn-primary" style="margin-left: 107px;">Add Row</button>
+        <button onclick="remove()" class="btn btn-primary"> Remove Row</button>
+    </div>
+    <!-- <button type="button" style="margin-left: 70%;" class="btn btn-primary btn-lg" class="center"></div> onclick="back()">Home</button> -->
+
+    <script src="jquery.js"></script>
+    <script src="scripts.js"></script>
+
+    <script type="text/javascript">
+                var i=0;
+        function openeachdip(){
+            let id = sessionStorage.getItem('key');
+        $(function() {
+        $.ajax({
+            url: 'http://localhost:8080/api/users/'+id,
+            contentType: 'application/json',
+            success: function(response) {
+
+                var tbodyEl = $('tbody');
+                tbodyEl.html('');
+
+                //$('#branchname').html(bname)
+                //$('#bm').html(" Branch Name",response.audit.Managername)
+
+
+
+                response.audit.Checklists.forEach(function(Checklists){
+                    console.log(Checklists.Status)
+                    state=""
+                    if(Checklists.Status == true){
+                        state = "checked";
+                    }
+                    
+
+                    i=i+1
+                    tbodyEl.append('\
+                        <tr>\
+                            <td class="id">' + i + '</td>\
+                                <td class="id"> <label class="container">' + Checklists.Soptype + '</td>\
+                                    <td><input type = "checkbox" value="" '+state+'></td>\
+                                    <th><form action="l">\
+                            <input type="file" id="myFile" name="filename" style="width: 169px; font-size:0.8em;"></form></th>\
+                            <td><input type="text" class="com" value="' + Checklists.Comment + '"></td>\
+                            <td>\
+                                <button class="update-button btn-primary" style="margin-left: 5px;font-size: 17px;margin-right: 10px;"><i class="fa fa-pencil-alt"></i></button>\
+                                <button class="delete-button btn-danger" style="font-size: 18px;"><i class="fa fa-times"></i></button>\
+                            </td>\
+                        </tr>\
+                    ');
+
+                 
+                    });                    
+            }  
+        }    
+        );
+    });
+}
+var j=0;
+
+$(function() {
+     $('#add').click(function(){
+       i = i+1;
+       j=j+1
+         var newDiv1 = $('\
+                        <tr>\
+                            <td class="id">' + i + '</td>\
+                                <td> <input type="text" style="width:100px;"></td>\
+                                <td> <input type="text" ></td>\
+                            <td><input type="text" ></td>\
+                            <td> <input type="text" ></td>\
+                            <td> <input type="text"></td>\
+                        </tr>\
+                    ');
+        $('table').append(newDiv1);
+     });
+ });
+  
+
+ function remove() {
+          if(j>0){
+            j=j-1;
+          $('tr:last-child').remove();
+          }
+          }
+
+function back() {
+    window.location.href="http://localhost/Branch_final/mainlandingpage.html";
+            }
+</script>
+
+<script>
+$(document).ready(function(){
+				console.log("hey there");
+
+				$('#save').click(function(){ 
+
+				
+
+					var Auditofficials = []
+					$('#div2 > div.form-holder').each(function(){
+                        
+                        
+						Auditofficials.push({ 
+							Name: $(this).find('[name=name1]').val(),
+							Employee_id: $(this).find('[name=empid1]').val(),
+							Title: $(this).find('[name=title1]').val(),
+							Mobileno: $(this).find('[name=phno1]').val(),
+						})
+
+					})
+
+					
+
+					var digits = '0123456789';
+    					let ID = '';
+    					for (let i = 0; i < 6; i++ ) {
+        					ID += digits[Math.floor(Math.random() * 10)];
+    					}
+
+					loc = "24242,343433"
+					console.log(ID)
+
+					var user ={
+                    ID: parseInt(ID),
+                    Branchname: $('[name=bname]').val(),
+                    Managername: $('[name=b_m_name]').val(),
+					"isaudited": "no",
+    				"Branchlocation": loc,
+                    Branchofficials: Branchofficials,
+					Auditofficials: Auditofficials,
+					Checklists:Checklists,
+
+                }
+					$.ajax({
+					
+						url: "http://localhost:8080/api/users",
+						type: 'POST',
+						data:JSON.stringify(user),
+						headers: {'Content-Type': 'application/json; charset=utf-8'},
+						dataType: 'json',
+						success: function(data){
+							console.log("inseted successfully");
+						},
+						error: function(data){
+							alert("No user found")
+						}
+					})
+				})
+			})
+
+
+
+
+
+
+function update-button(){
+$('table').on('click', '.update-button', function() {
+    var rowEl = $(this).closest('tr');
+    var id = rowEl.find('.id').text();
+    var newName = rowEl.find('.name').val();
+
+    $.ajax({
+        url: 'http://localhost:8080/api/users/' + id,
+        method: 'PUT',
+        contentType: 'application/json',
+        data: JSON.stringify({ newName: newName }),
+        success: function(response) {
+            console.log(response);
+            $('#get-button').click();
+        }
+    });
+});
+}
+</script>
+</body>
+</html>

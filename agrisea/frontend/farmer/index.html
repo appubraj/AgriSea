@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agricultural Blockchain App</title>
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <h1>Farmers Marketplace</h1>
+  <!-- <h4>Public Id : <span class="white"><span id="SenderBalance"></span> </h4> -->
+  
+  
+  <div class="btn-group" id="form-selector" align="center">
+
+		<button type="button" class="btn1 btn-selector active" id="sign-up-btn">Crop Details</button>
+		<a href="http://localhost/hi/src11/checklist.html""><button type="button" class="btn1 btn-selector" id="logs-in-btn">List of Crops</button></a>
+		<!-- <button type="button" class="btn1 btn-selector" id="payments-btn">Customer</button> -->
+		<!-- <button type="button" class="btn1 btn-selector" id="finance-btn">Micro-Finance</button> -->
+		
+	</div>
+
+  
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+          <div class="form" id="sign-up-form">
+            <h2 class="form-title" style="font-size:33px;">Enter Farmer Details</h2>
+            <input type="text" name="id" class="input-std" id="fid" placeholder="Farmer UID">
+        <input type="text" class="input-std" name="fname" id="fname" placeholder="Full Name">
+        <input type="text" class="input-std" name="gen" id="gender" placeholder="Gender">
+        <input type="text" class="input-std" name="dob" id="dob" placeholder="DOB">
+        <input type="text" class="input-std" name="mob" id="mobile" placeholder="Mobile">
+        <input type="text" class="input-std" name="add" id="address" placeholder="Address">
+         <!-- <input type="text" class="input-std" name="ex" id="exprice" placeholder="Expected Price">  -->
+            <!-- <input type="text" class="input-std" id="exprice" placeholder="Expected Price"> -->
+            <!-- <button type="button" class="btn-submit" id="setvalue" onclick="set()">Submit Details!</button> -->
+          <span id="status"></span>
+          </div>
+        </div>
+        <div class="col-xs-6" id="div1">
+          <div class="form" id="sign-up-form">
+            <h2 class="form-title" style="font-size:33px;">Enter Crop Details</h2>
+            <input list="cropName" name="myCrop"  placeholder="Crop Name" style="margin-top: 5px; margin-bottom: 5px; height: 31px; width: 317px;">
+              <datalist id="cropName" >
+                <option value="Wheat">
+                <option value="Barley">
+                <option value="Oat">
+                <option value="Corn">
+                <option value="Millet">
+              </datalist>
+            
+              <input type="text" class="input-std" name="location" placeholder="Location" style="width:317px; margin-top: 5px;  margin-bottom: 5px;">
+          
+            <input list="qual" name="qual"  placeholder="Quality Grade" style="margin-top: 5px;  margin-bottom: 5px; height: 31px; width: 317px;">
+              <datalist id="Quality" >
+                <option value="Grade A">
+                <option value="Grade B">
+                <option value="Grade C">
+              </datalist>
+
+              <input type="text" class="input-std" name="q" placeholder="Quentity" style="margin-top: 5px;  width:317px; margin-bottom: 5px;">
+            
+              <input type="text" class="input-std" name="f" placeholder="Fertilizers Used" style="margin-top: 5px;  margin-bottom: 5px;"> 
+            
+            <input list="stage" name="stage"  placeholder="Stage" style="margin-top: 5px;  margin-bottom: 5px;  height: 31px; width: 317px;">
+              <datalist id="stage" >
+                <option value="Half Month Crop Cycle">
+                <option value="Full Month Crop Cycle">
+              </datalist>
+              
+            
+            <!-- <input type="text" class="input-std" id="exprice" placeholder="Expected Price"> -->
+            <button type="button" class="btn-submit" id="setvalue" onclick="set()">Submit Details!</button>
+          <span id="status"></span>
+          </div>
+        </div>
+    </div>
+</div>
+    
+	
+	
+	 	
+
+
+		
+		
+  <br>
+
+  
+   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      console.log("hey there");
+
+      $('#setvalue').click(function(){ 
+
+        var cropDetils = []
+        $('#div1 > #sign-up-form').each(function(){ 
+          cropDetils.push({ 
+            cropName: $(this).find('[name=myCrop]').val(),
+            quantity: $(this).find('[name=q]').val(),
+            stage: $(this).find('[name=stage]').val(),
+            landLocation: $(this).find('[name=location]').val(),
+            grade: $(this).find('[name=qual]').val(),
+            // minimumBid : $(this).find('[name=ba]').val(),
+            fertilizers : $(this).find('[name=f]').val(),
+            "minimunBid" : "45",
+            "currentBid" : "67",
+          })
+
+        })
+
+        
+
+        var user ={
+                  uid: $('[name=id]').val(),
+                  fullName: $('[name=fname]').val(),
+                  dob: $('[name=dob]').val(),
+                  mobile: $('[name=mob]').val(),
+                  address: $('[name=add]').val(),
+                  cropDetils:cropDetils
+
+              }
+              console.log(user)
+        $.ajax({
+        
+          url: "https://2394-106-51-10-186.in.ngrok.io/api/v1/formers",
+          type: 'POST',
+          data:JSON.stringify(user),
+          headers: {'Content-Type': 'application/json; charset=utf-8'},
+          dataType: 'json',
+          success: function(data){
+            console.log("inseted successfully");
+          },
+          error: function(data){
+            alert("No user found")
+          }
+        })
+      })
+    })
+
+  </script>
+
+
+ 
+</body>
+</html>
